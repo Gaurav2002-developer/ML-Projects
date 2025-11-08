@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Diabetes Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+<body>
+
+    <div class="container">
+        <h1>Diabetes Prediction Form</h1>
+        <form action="/predict" method="POST">
+            <input type="number" name="pregnancies" placeholder="Number of Pregnancies" required>
+            <input type="number" name="glucose" placeholder="Glucose Level" required>
+            <input type="number" name="bloodpressure" placeholder="Blood Pressure" required>
+            <input type="number" name="skinthickness" placeholder="Skin Thickness" required>
+            <input type="number" name="insulin" placeholder="Insulin Level" required>
+            <input type="number" name="bmi" placeholder="BMI" step="0.1" required>
+            <input type="number" name="dpf" placeholder="Diabetes Pedigree Function" step="0.01" required>
+            <input type="number" name="age" placeholder="Age" required>
+
+            <button type="submit">Predict</button>
+        </form>
+
+        {% if prediction %}
+            <div class="result">
+                <h2>{{ prediction }}</h2>
+            </div>
+        {% endif %}
+        </div>
+<!--        <div class="footer">-->
+<!--            <h6>Developer</h6>-->
+
+<!--            <h9>Gaurav Chaturvedi</h9>-->
+<!--        <br>-->
+<!--        <br>-->
+
+<!--        <div  class="contacts">-->
+<!--        <a href="mailto:example@gmail.com" class="email-link">-->
+<!--            <img src="D:\search engine\templates\gmail.jpeg" alt="Gmail" class="icon">-->
+<!--            <span>Gmail</span></a>-->
+<!--            <br>-->
+<!--            <a href="www.linkedin.com/in/gaurav-chaturvedi-377506226" class="email-link">-->
+<!--            <img src="D:\search engine\templates\linkedin.png" alt="Gmail" class="icon">-->
+<!--            <span>LinkedIn</span></a>-->
+<!--          </div>-->
+<!--        </div>-->
+
+</body>
+</html>
